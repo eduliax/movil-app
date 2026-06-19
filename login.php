@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// Datos de conexión obtenidos de tu captura de MonsterASP
+// Datos de conexión idénticos a tu SQLyog
 $host     = 'db45754.public.databaseasp.net'; 
 $db       = 'db45754';
 $user     = 'db45754';
@@ -18,9 +18,9 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $password, $options);
 } catch (\PDOException $e) {
-  echo json_encode([
+    echo json_encode([
         "status" => "error",
-        "message" => "Error de conexión: " . $e->getMessage()
+        "message" => "Error de conexión REAL: " . $e->getMessage()
     ]);
     exit;
 }
@@ -55,7 +55,7 @@ try {
 } catch (\PDOException $e) {
     echo json_encode([
         "status" => "error",
-        "message" => "Error al realizar la consulta en la base de datos."
+        "message" => "Error al realizar la consulta: " . $e->getMessage()
     ]);
 }
 exit;
