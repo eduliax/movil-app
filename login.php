@@ -18,9 +18,9 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $password, $options);
 } catch (\PDOException $e) {
-    echo json_encode([
+  echo json_encode([
         "status" => "error",
-        "message" => "Error de conexión al servidor de base de datos."
+        "message" => "Error de conexión: " . $e->getMessage()
     ]);
     exit;
 }
