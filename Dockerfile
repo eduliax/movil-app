@@ -1,7 +1,10 @@
 FROM php:8.2-apache
 
-# Instalamos la extensión pdo_mysql requerida para conectar bases de datos
+# 1. Instalamos la extensión de MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Exponemos el puerto estándar web
+# 2. Copiamos obligatoriamente todos los archivos (como login.php) al directorio web de Apache
+COPY . /var/www/html/
+
+# 3. Abrimos el puerto estándar
 EXPOSE 80
