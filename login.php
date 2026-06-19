@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 // Datos de conexión obtenidos de tu captura de MonsterASP
-$host     = 'db45754.databaseasp.net'; 
+$host     = 'db45754.public.databaseasp.net'; 
 $db       = 'db45754';
 $user     = 'db45754';
 $password = '7k%N#Wr29s_J'; 
